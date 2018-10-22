@@ -27,6 +27,12 @@ $router
         $oController = new CadastroUsuarioController();
         $oController->index();
     })
+    ->get('/cadastro-concedente', function () {
+        require_once('controller/CadastroConcedenteController.php');
+
+        $oController = new CadastroConcedenteController();
+        $oController->index();
+    })
     /*->on('GET', 'path/to/action', function () {
         return 'this is a hero return';
     })
