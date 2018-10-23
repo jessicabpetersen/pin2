@@ -33,6 +33,12 @@ $router
         $oController = new CadastroConcedenteController();
         $oController->index();
     })
+    ->get('/cadastro-estagio', function () {
+        require_once('controller/CadastroEstagioController.php');
+
+        $oController = new CadastroEstagioController();
+        $oController->index();
+    })
     /*->on('GET', 'path/to/action', function () {
         return 'this is a hero return';
     })
