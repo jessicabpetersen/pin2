@@ -1,7 +1,6 @@
-@extends('layout.app')
-@section('title', 'Cadastro de Usuário')
+<?php $__env->startSection('title', 'Cadastro de Usuário'); ?>
 
-@section('content')
+<?php $__env->startSection('content'); ?>
 <div class="container-fluid">
     <div class="row" id="nav-bar">
         <div class="col-12">
@@ -115,9 +114,10 @@
         </div>
     </div>
 </div>
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('scripts')
+<?php $__env->startSection('scripts'); ?>
 <script src="/pin2-master/euler-front/public/JS/js_global.js" type="text/javascript"></script>
 
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layout.app', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
