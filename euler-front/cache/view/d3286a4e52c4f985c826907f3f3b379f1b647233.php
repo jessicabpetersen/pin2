@@ -23,11 +23,11 @@
                         <div class="form-row">
                             <div class="form-group col-md-8">
                                 <label for="razao">Razão Social</label>
-                                <input type="text" class="form-control" id="razao" name="razao">
+                                <input type="text" class="form-control" id="razao" name="razao" maxlength="50">
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="cnpj">CNPJ</label>
-                                <input type="text" class="form-control" id="cnpj" name="cnpj">
+                                <input type="text" placeholder="" class="form-control cnpj" id="cnpj" name="cnpj">
                             </div>
                         </div>
                     </fieldset>
@@ -36,29 +36,29 @@
                         <div class="form-row">
                             <div class="form-group col-md-10">
                                 <label for="logradouro">Logradouro</label>
-                                <input type="text" class="form-control" id="logradouro" name="logradouro">
+                                <input type="text" class="form-control" id="logradouro" name="logradouro" maxlength="50" required>
                             </div>
                             <div class="form-group col-md-2">
                                 <label for="numero">Número</label>
-                                <input type="text" class="form-control" id="bairro" name="bairro">
+                                <input type="text" class="form-control number" id="bairro" name="bairro" required>
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-4">
                                 <label for="bairro">Bairro</label>
-                                <input type="text" class="form-control" id="bairro" name="bairro">
+                                <input type="text" class="form-control" id="bairro" name="bairro" required>
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="cep">CEP</label>
-                                <input type="text" class="form-control" id="cep" name="cep">
+                                <input type="text" class="form-control cep" id="cep" name="cep" required>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="cidade">Cidade</label>
-                                <input type="text" class="form-control" id="cidade" name="cidade">
+                                <input type="text" class="form-control" id="cidade" name="cidade" maxlength="50" required>
                             </div>
                             <div class="form-group col-md-1">
                                 <label for="uf">UF</label>
-                                <input type="text" class="form-control" id="uf" name="uf">
+                                <input type="text" class="form-control uf" id="uf" name="uf" maxlength="2" required>
                             </div>
                         </div>
                     </fieldset>
@@ -71,7 +71,7 @@
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="telefone">Telefone</label>
-                                <input type="text" class="form-control" id="telefone" name="telefone">
+                                <input type="text" class="form-control telefone" id="telefone" name="telefone">
                             </div>
                         </div>
                     </fieldset>
@@ -80,21 +80,21 @@
                         <div class="form-row">
                             <div class="form-group col-md-7">
                                 <label for="representante">Representante</label>
-                                <input type="text" class="form-control" id="representante" name="representante">
+                                <input type="text" class="form-control" id="representante" name="representante" maxlength="50">
                             </div>
                             <div class="form-group col-md-5">
                                 <label for="cargo-representante">Cargo</label>
-                                <input type="text" class="form-control" id="cargo-representante" name="cargo-representante">
+                                <input type="text" class="form-control" id="cargo-representante" name="cargo-representante" maxlength="50">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-7">
                                 <label for="supervisor">Supervisor</label>
-                                <input type="text" class="form-control" id="supervisor" name="supervisor">
+                                <input type="text" class="form-control" id="supervisor" name="supervisor" maxlength="50">
                             </div>
                             <div class="form-group col-md-5">
                                 <label for="cargo-supervisor">Cargo</label>
-                                <input type="text" class="form-control" id="cargo-supervisor" name="cargo-supervisor">
+                                <input type="text" class="form-control" id="cargo-supervisor" name="cargo-supervisor" maxlength="50">
                             </div>
                         </div>
                         <div class="form-row">

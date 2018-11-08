@@ -38,15 +38,18 @@
                             </div>
                             <div class="form-group col-7 col-md-2">
                                 <label for="ano">Ano</label>
-                                <input type="number" class="form-control" id="ano" name="ano">
+                                <input type="text" class="form-control ano" id="ano" name="ano">
                             </div>
                             <div class="form-group col-5 col-md-2 col-lg-1">
                                 <label for="semestre">Semestre</label>
-                                <input type="number" class="form-control" id="semestre" name="semestre">
+                                <select name="semestre" id="semestre">
+                                    <option value="1">Primeiro</option>
+                                    <option value="2">Segundo</option>
+                                </select>
                             </div>
                             <div class="form-group col-md-8 col-lg-9">
                                 <label for="area">Área</label>
-                                <input type="text" class="form-control" id="area" name="area">
+                                <input type="text" class="form-control" id="area" name="area" maxlength="50">
                             </div>
                         </div>
                     </fieldset>
@@ -55,7 +58,7 @@
                         <div class="form-row">
                             <div class="form-group col-md-8">
                                 <label for="local">Local</label>
-                                <input type="text" class="form-control" id="local" name="local">
+                                <input type="text" class="form-control" id="local" name="local" maxlength="50">
                             </div>
                             <div class="form-group col-6 col-md-2">
                                 <label for="horario-inicial">Início</label>
@@ -73,7 +76,7 @@
                             </div>
                             <div class="form-group col-md-5">
                                 <label for="cargo-supervisor">Cargo</label>
-                                <input type="text" class="form-control" id="cargo-supervisor" name="cargo-supervisor">
+                                <input type="text" class="form-control" id="cargo-supervisor" name="cargo-supervisor" maxlength="50">
                             </div>
                         </div>
                     </fieldset>
@@ -82,17 +85,17 @@
                         <div class="form-row">
                             <div class="form-group col-md-7">
                                 <label for="objetivos">Objetivos</label>
-                                <input type="text" class="form-control" id="objetivos" name="objetivos">
+                                <input type="text" class="form-control" id="objetivos" name="objetivos" maxlength="50">
                             </div>
                             <div class="form-group col-md-5">
                                 <label for="atividades">Atividades</label>
-                                <input type="text" class="form-control" id="atividades" name="atividades">
+                                <input type="text" class="form-control" id="atividades" name="atividades" maxlength="50">
                             </div>
                         </div>
                         <div class="form-row">
                             <div class="form-group col-md-12">
                                 <label for="descricao">Descrição</label>
-                                <input type="text" class="form-control" id="descricao" name="descricao">
+                                <input type="text" class="form-control" id="descricao" name="descricao" maxlength="50">
                             </div>
                         </div>
                     </fieldset>
@@ -101,19 +104,19 @@
                         <div class="form-row">
                             <div class="form-group col-6 col-md-3">
                                 <label for="numero">Número</label>
-                                <input type="number" class="form-control" id="numero" name="numero">
+                                <input type="text" class="form-control number" id="numero" name="numero">
                             </div>
                             <div class="form-group col-6 col-md-3">
                                 <label for="valor">Valor</label>
-                                <input type="text" class="form-control" id="valor" name="valor">
+                                <input type="text" class="form-control money" id="valor" name="valor" maxlength="50">
                             </div>
                             <div class="form-group col-6 col-md-3">
                                 <label for="valor-bolsa">Valor da bolsa</label>
-                                <input type="text" class="form-control" id="valor-bolsa" name="valor-bolsa">
+                                <input type="text" class="form-control money" id="valor-bolsa" name="valor-bolsa" maxlength="50">
                             </div>
                             <div class="form-group col-6 col-md-3">
                                 <label for="vale-transporte">Vale transporte</label>
-                                <input type="text" class="form-control" id="vale-transporte" name="vale-transporte">
+                                <input type="text" class="form-control money" id="vale-transporte" name="vale-transporte" maxlength="50">
                             </div>
                         </div>
                     </fieldset>
