@@ -2,6 +2,7 @@
 @section('title', 'Cadastro de Concedente')
 
 @section('content')
+
 <div class="container-fluid">
     <div class="row" id="nav-bar">
         <div class="col-12">
@@ -9,26 +10,43 @@
                 <div class="col-5 col-sm-3 col-lg-2 total-flex" style="justify-content: left;">
                     <h1>EULER</h1>
                 </div>
-                <div class="col-4 col-sm-3 col-md-2 total-flex">
-                </div>
+                <h6>Estágios Universitários Lavratura e Emissão de Relatórios</h4>
             </div>
         </div>
+        <nav id="menu">
+            <ul class="dropdrown">
+                <li><a href="#">Cadastros</a>
+                    <ul>
+                        <li><a href="cadastro-estagio.html">Estágio</a></li>
+                        <li><a href="cadastro-concedente.html">Concedente</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Impressões</a>
+                    <ul>
+                        <li><a>Documento 1</a></li>
+                        <li><a>Documento 2</a></li>
+                        <li><a>Documento 3</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+        </nav>
     </div>
     <div class="container">
         <div class="row">
             <div class="col">
                 <h2>Cadastro de Concedente</h2>
-                <form>
+                <form method="post" action="/pin2-master/euler-front/model/ModelCadastroConcedente.php">
                     <fieldset>
                         <legend>Informações da Instituição</legend>
                         <div class="form-row">
                             <div class="form-group col-md-8">
                                 <label for="razao">Razão Social</label>
-                                <input type="text" class="form-control" id="razao" name="razao" maxlength="50">
+                                <input type="text" class="form-control" id="razao" name="razao" maxlength="50" required>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="cnpj">CNPJ</label>
-                                <input type="text" placeholder="" class="form-control cnpj" id="cnpj" name="cnpj">
+                                <input type="text" placeholder="xx.xxx.xxx/xxxx-xx" class="form-control cnpj" id="cnpj" name="cnpj" required>
                             </div>
                         </div>
                     </fieldset>
@@ -41,7 +59,7 @@
                             </div>
                             <div class="form-group col-md-2">
                                 <label for="numero">Número</label>
-                                <input type="text" class="form-control number" id="bairro" name="bairro" required>
+                                <input type="text" class="form-control number" id="numero" name="numero" required>
                             </div>
                         </div>
                         <div class="form-row">
@@ -51,7 +69,7 @@
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="cep">CEP</label>
-                                <input type="text" class="form-control cep" id="cep" name="cep" required>
+                                <input type="text" class="form-control cep" id="cep" name="cep" placeholder="xxxxx-xxx" required>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="cidade">Cidade</label>
@@ -59,7 +77,35 @@
                             </div>
                             <div class="form-group col-md-1">
                                 <label for="uf">UF</label>
-                                <input type="text" class="form-control uf" id="uf" name="uf" maxlength="2" required>
+                                <select name="uf" id="uf" class="campo_select" required>
+                                    <option value="AC">AC</option>
+                                    <option value="AL">AL</option>
+                                    <option value="AM">AM</option>
+                                    <option value="AP">AP</option>
+                                    <option value="BA">BA</option>
+                                    <option value="CE">CE</option>
+                                    <option value="DF">DF</option>
+                                    <option value="ES">ES</option>
+                                    <option value="GO">GO</option>
+                                    <option value="MA">MA</option>
+                                    <option value="MT">MT</option>
+                                    <option value="MS">MS</option>
+                                    <option value="MG">MG</option>
+                                    <option value="PA">PA</option>
+                                    <option value="PB">PB</option>
+                                    <option value="PR">PR</option>
+                                    <option value="PE">PE</option>
+                                    <option value="PI">PI</option>
+                                    <option value="RN">RN</option>
+                                    <option value="RS">RS</option>
+                                    <option value="RJ">RJ</option>
+                                    <option value="RO">RO</option>
+                                    <option value="RR">RR</option>
+                                    <option value="SC">SC</option>
+                                    <option value="SP">SP</option>
+                                    <option value="SE">SE</option>
+                                    <option value="TO">TO</option>
+                                </select>
                             </div>
                         </div>
                     </fieldset>
@@ -68,11 +114,11 @@
                         <div class="form-row">
                             <div class="form-group col-md-9">
                                 <label for="email">E-mail</label>
-                                <input type="email" class="form-control" id="email" name="email">
+                                <input type="email" class="form-control" id="email" name="email" required>
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="telefone">Telefone</label>
-                                <input type="text" class="form-control telefone" id="telefone" name="telefone">
+                                <input type="text" class="form-control telefone" id="telefone" name="telefone" placeholder="(xx) xxxx-xxxx" required>
                             </div>
                         </div>
                     </fieldset>
@@ -81,35 +127,11 @@
                         <div class="form-row">
                             <div class="form-group col-md-7">
                                 <label for="representante">Representante</label>
-                                <input type="text" class="form-control" id="representante" name="representante" maxlength="50">
+                                <input type="text" class="form-control" id="representante" name="representante" maxlength="50" required>
                             </div>
                             <div class="form-group col-md-5">
-                                <label for="cargo-representante">Cargo</label>
-                                <input type="text" class="form-control" id="cargo-representante" name="cargo-representante" maxlength="50">
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group col-md-7">
-                                <label for="supervisor">Supervisor</label>
-                                <input type="text" class="form-control" id="supervisor" name="supervisor" maxlength="50">
-                            </div>
-                            <div class="form-group col-md-5">
-                                <label for="cargo-supervisor">Cargo</label>
-                                <input type="text" class="form-control" id="cargo-supervisor" name="cargo-supervisor" maxlength="50">
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group col-md-8">
-                                <label for="local">Local</label>
-                                <input type="text" class="form-control" id="local" name="local">
-                            </div>
-                            <div class="form-group col-6 col-md-2">
-                                <label for="horario-inicial">Início</label>
-                                <input type="time" class="form-control" id="horario-inicial" name="horario-inicial">
-                            </div>
-                            <div class="form-group col-6 col-md-2">
-                                <label for="horario-final">Término</label>
-                                <input type="time" class="form-control" id="horario-final" name="horario-final">
+                                <label for="cargo_representante">Cargo</label>
+                                <input type="text" class="form-control" id="cargo_representante" name="cargo_representante" maxlength="50" required>
                             </div>
                         </div>
                     </fieldset>

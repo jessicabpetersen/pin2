@@ -1,3 +1,8 @@
+//$(document).ready(function(){
+//   let sCpf = '<?= $_GET["cpf"]; ?>';
+//   $('#login').val(sCpf); 
+//});
+
 function validaLogin()
 {
     let sLogin = $('#login').val();

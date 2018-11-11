@@ -1,8 +1,8 @@
 $(document).ready(function(){
-   $('#cep').attr('title', 'teste');
+   $('#cep').attr('title', 'Campo destinado ao CEP EX: 00000-000');
 });
 
-function validaCadatro()
+function validaCadatro(data)
 {
     let sNome = $('#nome').val();
     let sCpf = $('#cpf').val();
@@ -19,10 +19,39 @@ function validaCadatro()
     let sCelular = $('#celular').val();
     let sMatricula = $('#matricula').val();
     
+//    let data = new Date();
+    console.log(data);
+//    if(dDataNasc > )
+//    {
+//        
+//    }
     
 }
+//$("input").keydown(function(event){ 
+//    $("div").html("Key: " + event.which);
+//});
 
-function teste()
+
+function provarProFarahQueEuSeiUsarMetodo(msg)
 {
-    alert('teste');
+    let sCpf = $('#cpf').val();
+    $.ajax(
+    {
+        url : "/pin2-master/euler-front/model/ModelCadastroUsuario.php",
+        type : 'GET',
+        dataType: 'html', // json
+        data : 
+        {
+             req : 'getCpf',
+             cpf : sCpf
+        }
+    })
+    .done(function(aRes)
+    {
+        if(aRes == 0) {
+            alert('Ele ta preso, Babaca');
+//            location.href='/pin2-master/euler-front/login?cpf='+sCpf;
+            $('#cpf').val('');
+        }
+    });
 }

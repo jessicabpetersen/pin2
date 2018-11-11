@@ -17,7 +17,7 @@
         <div class="row">
             <div class="col">
                 <h2>Cadastro de Usuário</h2>
-                <form>
+                <form method="post" action="/pin2-master/euler-front/model/ModelCadastroUsuario.php">
                     <fieldset>
                         <legend>Pessoal</legend>
                         <div class="form-row">
@@ -29,15 +29,15 @@
                         <div class="form-row">
                             <div class="form-group col-md-4">
                                 <label for="cpf">CPF</label>
-                                <input type="text" class="form-control cpf" id="cpf" name="cpf" maxlength="14" placeholder="000.000.000-00" required>
+                                <input type="text" class="form-control cpf" id="cpf" name="cpf" maxlength="14" onchange="if(this.value.length == 14) { provarProFarahQueEuSeiUsarMetodo('chupa faráh') } else { alert(this.value.length); }" placeholder="xxx.xxx.xxx-xx" required>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="rg">RG</label>
                                 <input type="text" class="form-control rg" id="rg" name="rg" maxlength="7" required>
                             </div>
                             <div class="form-group col-md-4">
-                                <label for="data-nascimento">Data de nascimento</label>
-                                <input type="date" class="form-control" id="data-nascimento" name="data-nascimento" required>
+                                <label for="data_nascimento">Data de nascimento</label>
+                                <input type="date" class="form-control" id="data_nascimento" name="data_nascimento" required>
                             </div>
                         </div>
                     </fieldset>
@@ -60,7 +60,7 @@
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="cep">CEP</label>
-                                <input type="text" placeholder="00000-000" class="form-control cep" id="cep" name="cep" maxlength="9" required>
+                                <input type="text" placeholder="xxxxx-xxx" class="form-control cep" id="cep" name="cep" maxlength="9" required>
                             </div>
                             <div class="form-group col-md-4">
                                 <label for="cidade">Cidade</label>
@@ -68,7 +68,35 @@
                             </div>
                             <div class="form-group col-md-1">
                                 <label for="uf">UF</label>
-                                <input type="text" class="form-control uf" id="uf" name="uf" maxlength="2" required>
+                                <select name="uf" id="uf" class="campo_select" required>
+                                    <option value="AC">AC</option>
+                                    <option value="AL">AL</option>
+                                    <option value="AM">AM</option>
+                                    <option value="AP">AP</option>
+                                    <option value="BA">BA</option>
+                                    <option value="CE">CE</option>
+                                    <option value="DF">DF</option>
+                                    <option value="ES">ES</option>
+                                    <option value="GO">GO</option>
+                                    <option value="MA">MA</option>
+                                    <option value="MT">MT</option>
+                                    <option value="MS">MS</option>
+                                    <option value="MG">MG</option>
+                                    <option value="PA">PA</option>
+                                    <option value="PB">PB</option>
+                                    <option value="PR">PR</option>
+                                    <option value="PE">PE</option>
+                                    <option value="PI">PI</option>
+                                    <option value="RN">RN</option>
+                                    <option value="RS">RS</option>
+                                    <option value="RJ">RJ</option>
+                                    <option value="RO">RO</option>
+                                    <option value="RR">RR</option>
+                                    <option value="SC">SC</option>
+                                    <option value="SP">SP</option>
+                                    <option value="SE">SE</option>
+                                    <option value="TO">TO</option>
+                                </select>
                             </div>
                         </div>
                     </fieldset>
@@ -81,11 +109,11 @@
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="telefone">Telefone</label>
-                                <input type="text" class="form-control telefone" id="telefone" name="telefone" placeholder="(00) 0000-0000" required>
+                                <input type="text" class="form-control telefone" id="telefone" name="telefone" placeholder="(xx) xxxx-xxxx">
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="celular">Celular</label>
-                                <input type="text" class="form-control celular" id="celular" name="celular" required>
+                                <input type="text" class="form-control celular" id="celular" name="celular" placeholder="(xx) xxxxx-xxxx">
                             </div>
                         </div>
                     </fieldset>
@@ -93,19 +121,13 @@
                         <legend>Curso</legend>
                         <div class="form-row">
                             <div class="form-group col-md-3">
-                                <label for="curso">Curso</label>
-                                <select name="curso" id="curso">
-                                    <option value="eso">ESO - Engenharia de Software</option>
-                                </select>
-                            </div>
-                            <div class="form-group col-md-3">
                                 <label for="matricula">Matrícula</label>
                                 <input type="text" class="form-control matricula" id="matricula" name="matricula" maxlength="10" required>
                             </div>
                         </div>
                     </fieldset>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary" onclick="validaCadatro()">Cadastrar</button>
+                        <button type="submit" class="btn btn-primary" onclick="validaCadatro(Date('d/m/Y'))">Cadastrar</button>
                     </div>
                 </form>
             </div>
