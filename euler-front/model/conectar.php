@@ -17,3 +17,23 @@ function Conectar() {
 function Desconectar($Conn) {
     pg_close($Conn);
 }
+
+/**
+ * 
+ * @param Boolean $bErro sql executado com sucesso
+ * @param String $sql string sql a ser executada
+ * @param String $conexao pg_connect
+ */
+function exec_sql(&$bErro, $sql, $conexao) {
+    $qry = pg_query($conexao, $sql);
+    
+    return $bErro = ($qry) ? false : true;
+}
+
+function commit($conexao){
+    pg_query($conexao, 'Commit');
+}
+
+function rollback($conexao){
+    pg_query($conexao, 'Rollback');
+}

@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).ready(function() {
    $('#cep').attr('title', 'Campo destinado ao CEP EX: 00000-000');
 });
 
@@ -38,7 +38,7 @@ function provarProFarahQueEuSeiUsarMetodo(msg)
     $.ajax(
     {
         url : "/pin2-master/euler-front/model/ModelCadastroUsuario.php",
-        type : 'GET',
+        type : 'POST',
         dataType: 'html', // json
         data : 
         {
