@@ -56,6 +56,23 @@ function mascara(t, mask)
 //    } else {
 //        return true;
 //    }
+   
+}
+
+
+function desabilitapolice(){
+    var numero          = document.getElementById('numero'),
+        valor           = document.getElementById('valor');
+
+    numero.disabled = true;
+    valor.disabled = true;
     
 }
 
+function habilitapolice(){
+     var numero          = document.getElementById('numero'),
+        valor           = document.getElementById('valor');
+
+    numero.disabled = false;
+    valor.disabled = false;
+}

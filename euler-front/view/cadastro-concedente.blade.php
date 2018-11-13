@@ -10,7 +10,7 @@
                 <div class="col-5 col-sm-3 col-lg-2 total-flex" style="justify-content: left;">
                     <h1>EULER</h1>
                 </div>
-                <h6>Estágios Universitários Lavratura e Emissão de Relatórios</h4>
+                <h6>Estágios Universitários Lavratura e Emissão de Relatórios</h6>
             </div>
         </div>
         <nav id="menu">
