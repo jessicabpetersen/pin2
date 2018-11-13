@@ -1,7 +1,6 @@
-@extends('layout.app')
-@section('title', 'Cadastro de Estágio')
+<?php $__env->startSection('title', 'Cadastro de Estágio'); ?>
 
-@section('content')
+<?php $__env->startSection('content'); ?>
 <div class="container-fluid">
     <div class="container-fluid">
             <div class="row" id="nav-bar">
@@ -156,8 +155,9 @@
         </div>
     </div>
 </div>
-@endsection
+<?php $__env->stopSection(); ?>
 
-@section('scripts')
+<?php $__env->startSection('scripts'); ?>
 
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layout.app', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -1,7 +1,6 @@
-@extends('layout.app')
-@section('title', 'Home')
+<?php $__env->startSection('title', 'Home'); ?>
 
-@section('content')
+<?php $__env->startSection('content'); ?>
     <div class="container-fluid">
             <div class="row" id="nav-bar">
                 <div class="col-12">
@@ -9,7 +8,7 @@
                         <div class="col-5 col-sm-3 col-lg-2 total-flex" style="justify-content: left;">
                             <h1>EULER</h1>
                         </div>
-                        <h6>Estágios Universitários Lavratura e Emissão de Relatórios</h6>
+                        <h6>Estágios Universitários Lavratura e Emissão de Relatórios</h4>
                     </div>
                 </div>
                 <nav id="menu">
@@ -51,4 +50,5 @@
                 </div>
             </div>
         </div>
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layout.app', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>
