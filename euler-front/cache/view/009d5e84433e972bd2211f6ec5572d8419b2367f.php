@@ -7,6 +7,7 @@
                 <div class="col-5 col-sm-3 col-lg-2 total-flex" style="justify-content: left;">
                     <h1>EULER</h1>
                 </div>
+                <h6>Estágios Universitários Lavratura e Emissão de Relatórios</h6>
                 <div class="col-4 col-sm-3 col-md-2 total-flex">
                     <a href="login">Login</a>
                 </div>
@@ -109,7 +110,7 @@
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="telefone">Telefone</label>
-                                <input type="text" class="form-control telefone" id="telefone" name="telefone" placeholder="(xx) xxxx-xxxx">
+                                <input type="text" class="form-control telefone" id="telefone" name="telefone" placeholder="(xx) xxxx-xxxx" onkeyup="validaEmail(this.value);">
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="celular">Celular</label>
@@ -127,7 +128,7 @@
                         </div>
                     </fieldset>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary" onclick="validaCadatro(Date('d/m/Y'))">Cadastrar</button>
+                        <button type="submit" class="btn btn-primary">Cadastrar</button>
                     </div>
                 </form>
             </div>

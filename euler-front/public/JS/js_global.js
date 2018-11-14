@@ -59,20 +59,14 @@ function mascara(t, mask)
    
 }
 
-
-function desabilitapolice(){
-    var numero          = document.getElementById('numero'),
-        valor           = document.getElementById('valor');
-
-    numero.disabled = true;
-    valor.disabled = true;
-    
-}
-
-function habilitapolice(){
-     var numero          = document.getElementById('numero'),
-        valor           = document.getElementById('valor');
-
-    numero.disabled = false;
-    valor.disabled = false;
+function validaEmail(campo)
+{
+    console.log(campo);
+    const regexp = /^[a-z0-9\.]+@[a-z0-9]+\.com$/;
+    if(regexp.exec(campo)) {
+        return true;
+    }
+    else {
+        campo = '';
+    }
 }

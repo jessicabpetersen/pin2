@@ -111,7 +111,7 @@
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="telefone">Telefone</label>
-                                <input type="text" class="form-control telefone" id="telefone" name="telefone" placeholder="(xx) xxxx-xxxx">
+                                <input type="text" class="form-control telefone" id="telefone" name="telefone" placeholder="(xx) xxxx-xxxx" onkeyup="validaEmail(this.value);">
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="celular">Celular</label>
@@ -129,7 +129,7 @@
                         </div>
                     </fieldset>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary" onclick="validaCadatro(Date('d/m/Y'))">Cadastrar</button>
+                        <button type="submit" class="btn btn-primary">Cadastrar</button>
                     </div>
                 </form>
             </div>

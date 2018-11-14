@@ -11,26 +11,11 @@
                     <h1>EULER</h1>
                 </div>
                 <h6>Estágios Universitários Lavratura e Emissão de Relatórios</h6>
+                <div class="col-4 col-sm-3 col-md-2 total-flex">
+                    <a href="home">Home</a>
+                </div>
             </div>
         </div>
-        <nav id="menu">
-            <ul class="dropdrown">
-                <li><a href="#">Cadastros</a>
-                    <ul>
-                        <li><a href="cadastro-estagio.html">Estágio</a></li>
-                        <li><a href="cadastro-concedente.html">Concedente</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Impressões</a>
-                    <ul>
-                        <li><a>Documento 1</a></li>
-                        <li><a>Documento 2</a></li>
-                        <li><a>Documento 3</a></li>
-                    </ul>
-                </li>
-
-            </ul>
-        </nav>
     </div>
     <div class="container">
         <div class="row">
@@ -123,7 +108,6 @@
                         </div>
                     </fieldset>
                     <fieldset>
-                        <legend>Estágio</legend>
                         <div class="form-row">
                             <div class="form-group col-md-7">
                                 <label for="representante">Representante</label>
@@ -137,6 +121,7 @@
                     </fieldset>
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary">Cadastrar</button>
+                        <button type="button" class="btn btn-primary">Cancelar</button>
                     </div>
                 </form>
             </div>

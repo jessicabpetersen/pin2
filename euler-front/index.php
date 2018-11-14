@@ -15,6 +15,12 @@ $router
         $oController = new HomeController();
         $oController->index();
     })
+    ->get('/homeAdm', function () {
+        require_once('controller/HomeAdmController.php');
+
+        $oController = new HomeAdmController();
+        $oController->index();
+    })
     ->get('/login', function () {
         require_once('controller/LoginController.php');
 
@@ -25,6 +31,12 @@ $router
         require_once('controller/CadastroUsuarioController.php');
 
         $oController = new CadastroUsuarioController();
+        $oController->index();
+    })
+    ->get('/cadastro-coordenador', function () {
+        require_once('controller/CadastroCoordenadorController.php');
+
+        $oController = new CadastroCoordenadorController();
         $oController->index();
     })
     ->get('/cadastro-concedente', function () {

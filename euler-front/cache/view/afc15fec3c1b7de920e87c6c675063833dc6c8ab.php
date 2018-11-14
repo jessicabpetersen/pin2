@@ -8,6 +8,7 @@
                 <div class="col-5 col-sm-3 col-lg-2 total-flex" style="justify-content: left;">
                     <h1>EULER</h1>
                 </div>
+                <h6>Estágios Universitários Lavratura e Emissão de Relatórios</h6>
                 <div class="col-4 col-sm-3 col-md-2 total-flex">
                     <a href="cadastro-usuario">Cadastre-se</a>
                 </div>

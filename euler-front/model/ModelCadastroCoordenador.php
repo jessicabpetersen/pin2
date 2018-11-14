@@ -1,3 +1,5 @@
+
+
 <?php
 
 if (!isset($_SESSION)) {
@@ -8,7 +10,7 @@ require_once 'conectar.php';
 
  $conexao = Conectar();
 
-if(isset($_POST['req']) && $_POST['req'] == 'getCpf') {
+if(isset($_POST['req']) == 'getCpf' && $_POST['req'] == 'getCpf') {
     $sCpf = $_GET['cpf'];
     $ret = "";
 
@@ -106,29 +108,6 @@ while($row = pg_fetch_row($ret)) {
     $iCodPes = $row;
 }
 $iCodPes = $iCodPes[0];
-
-$sql = "SELECT MAX(id_usuario) FROM usuario";
-
-$retUsu = pg_query($conexao, $sql);
-$iCodUsu;
-
-while($row = pg_fetch_row($retUsu)) {
-    $iCodUsu = $row;
-}
-$iCodUsu = $iCodUsu[0] + 1;
-
-$insert = "INSERT INTO usuario(
-                       id_usuario,
-                       senha,
-                       id_pessoa,
-                       tipo_usuario 
-                       ) VALUES (
-                       {$iCodUsu},
-                       '{$sSenha}',
-                       {$iCodPes},
-                       {$iTipoUsu} ); ";
-
-exec_sql($bErro, $insert, $conexao);
 
 if(!$bErro) {
     commit($conexao);
