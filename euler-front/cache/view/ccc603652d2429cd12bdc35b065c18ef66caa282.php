@@ -110,6 +110,7 @@
                         <div class="center">
                             <table>
                                 <tr>
+                                        <th width='15%'>Finalizado</th>
                                     <th width='15%'>Código</th>
                                     <th width='15%'>Tipo</th>
                                     <th width='15%'>Local</th>

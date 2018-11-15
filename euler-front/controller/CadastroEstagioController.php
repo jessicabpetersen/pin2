@@ -12,7 +12,7 @@ class CadastroEstagioController extends BaseController{
     
     public function buscaArea() {
         require_once 'model/conectar.php';
-
+        $aArea = null;
         $conexao = Conectar();
         
         $sql = "SELECT id_area, nome FROM area";
