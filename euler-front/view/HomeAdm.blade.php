@@ -125,6 +125,9 @@
                 </div>
             </div>
         </div>
+        <div class="row">
+            <button type="button" class="btn btn-success" style="margin-left: 15px; margin-top: 10px" onclick="salvaEstagios()">Salvar</button>
+        </div>
     </div>
 </div>
 @endsection

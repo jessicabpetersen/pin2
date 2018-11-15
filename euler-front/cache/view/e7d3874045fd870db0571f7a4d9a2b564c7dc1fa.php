@@ -31,9 +31,9 @@
                 </li>
                 <li><a href="#">Impressões</a>
                     <ul>
-                        <li><a>Documento 1</a></li>
-                        <li><a>Documento 2</a></li>
-                        <li><a>Documento 3</a></li>
+                        <li><a href="termo-de-compromisso"target="blank">Termo de compromisso</a></li>
+                        <li><a href="plano_de_atividades" target="blank">Plano de Atividades</a></li>
+                        <li><a href="requerimento_de_orientacao" target="blank">Requerimento de Orientacao</a></li>
                     </ul>
                 </li>
 

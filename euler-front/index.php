@@ -51,6 +51,30 @@ $router
         $oController = new CadastroEstagioController();
         $oController->index();
     })
+    ->get('/gerar-relatorios', function () {
+        require_once('controller/GerarRelatoriosController.php');
+
+        $oController = new GerarRelatoriosController();
+        $oController->index();
+    })
+    ->get('/termo-de-compromisso', function () {
+        require_once('controller/termodeCompromissoController.php');
+
+        $oController = new termodeCompromissoControll();
+        $oController->index();
+    })
+    ->get('/plano_de_atividades', function () {
+        require_once('controller/planodeAtividadesController.php');
+
+        $oController = new planodeAtividadesController();
+        $oController->index();
+    })
+    ->get('/requerimento_de_orientacao', function () {
+        require_once('controller/requerimentodeOrientacaoController.php');
+
+        $oController = new requerimentodeOrientacaoController();
+        $oController->index();
+    })
     /*->on('GET', 'path/to/action', function () {
         return 'this is a hero return';
     })
