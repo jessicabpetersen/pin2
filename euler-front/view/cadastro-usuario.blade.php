@@ -42,6 +42,12 @@
                                 <input type="date" class="form-control" id="data_nascimento" name="data_nascimento" required>
                             </div>
                         </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-3">
+                                <label for="matricula">Matricula</label>
+                                <input type="text" class="form-control matricula" id="matricula" name="matricula" maxlength="10" required>
+                            </div>
+                        </div>
                     </fieldset>
                     <fieldset>
                         <legend>Endereço</legend>
@@ -120,11 +126,15 @@
                         </div>
                     </fieldset>
                     <fieldset>
-                        <legend>Curso</legend>
+                        <legend>Senha</legend>
                         <div class="form-row">
                             <div class="form-group col-md-3">
-                                <label for="matricula">Matrícula</label>
-                                <input type="text" class="form-control matricula" id="matricula" name="matricula" maxlength="10" required>
+                                <label for="senha">Senha</label>
+                                <input type="password" class="form-control" id="senha" name="senha" maxlength="10" required>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="conf_senha">Confirmar Senha</label>
+                                <input type="password" class="form-control" id="conf_senha" name="conf_senha" onkeyup="validaSenha()" maxlength="10" required>
                             </div>
                         </div>
                     </fieldset>

@@ -2,7 +2,8 @@
 
 function Conectar() {
 
-    $str = "host=localhost port=5432 dbname=Heroku user=kamui password=qwe123";
+    $str = "host=ec2-107-20-227-192.compute-1.amazonaws.com port=5432 dbname=d9mk8p58k739ut user=xhjuhlktzhabez
+            password=083e54a5ac006efa54ef70d1d8d194adab0328391929ffebe926e718ec1b9ad5";
     $conection = pg_connect($str);
 
     if (!$conection) {
@@ -30,9 +31,9 @@ function exec_sql(&$bErro, $sql, $conexao) {
 }
 
 function commit($conexao){
-    pg_query($conexao, 'Commit');
+    pg_query($conexao, 'commit');
 }
 
 function rollback($conexao){
-    pg_query($conexao, 'Rollback');
+    pg_query($conexao, 'rollback');
 }

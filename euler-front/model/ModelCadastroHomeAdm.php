@@ -65,44 +65,38 @@ require_once 'conectar.php';
                        supervisor,
                        nome_coordenador as coordenador,
                        ano,
-                       semestre
+                       semestre,
+                  case when finalizado = 1 then '<input type=\"checkbox\" checked=\"true\" value=\"||id_estagio||\">'
+			else '<input type=\"checkbox\"  value=\"||id_estagio||\">'
+                       end as finalizado
                   FROM estagio";
 
         $ret = pg_query($conexao, $sql);
-       $i = 0;
-       $sHtml = '<table>';
+        $i = 0;
+        $sHtml = '<table>';
         while($row = pg_fetch_row($ret)) {
             $sHtml .= '<tr>';
             $sHtml .= ' <td>';
+            $sHtml .= "     $row[7]";
+            $sHtml .= " </td>";
+            $sHtml .= ' <td>';
             $sHtml .= "     $row[0]";
             $sHtml .= " </td>";
-//            $sHtml .= "</tr>";
-//            $sHtml .= '<tr>';
             $sHtml .= ' <td>';
             $sHtml .= "     $row[1]";
             $sHtml .= " </td>";
-//            $sHtml .= "</tr>";
-//            $sHtml .= '<tr>';
             $sHtml .= ' <td>';
             $sHtml .= "     $row[2]";
             $sHtml .= " </td>";
-//            $sHtml .= "</tr>";
-//            $sHtml .= '<tr>';
             $sHtml .= ' <td>';
             $sHtml .= "     $row[3]";
             $sHtml .= " </td>";
-//            $sHtml .= "</tr>";
-//            $sHtml .= '<tr>';
             $sHtml .= ' <td>';
             $sHtml .= "     $row[4]";
             $sHtml .= " </td>";
-//            $sHtml .= "</tr>";
-//            $sHtml .= '<tr>';
             $sHtml .= ' <td>';
             $sHtml .= "     $row[5]";
             $sHtml .= " </td>";
-//            $sHtml .= "</tr>";
-//            $sHtml .= '<tr>';
             $sHtml .= ' <td>';
             $sHtml .= "     $row[6]";
             $sHtml .= " </td>";

@@ -122,3 +122,7 @@ span#celular{
     margin-left: 250px;
     width: 75%;
 }
+
+.erro {
+    color: rgb(196, 22, 29);
+}

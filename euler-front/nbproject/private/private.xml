@@ -1,23 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
-    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/xampp/htdocs/pin2-master/euler-front/view/layout/app.blade.php</file>
-            <file>file:/C:/xampp/htdocs/pin2-master/euler-front/public/JS/js_login.js</file>
-            <file>file:/C:/xampp/htdocs/pin2-master/euler-front/view/cadastro-estagio.blade.php</file>
-            <file>file:/C:/xampp/htdocs/pin2-master/euler-front/view/cadastro-usuario.blade.php</file>
-            <file>file:/C:/xampp/htdocs/pin2-master/euler-front/model/ModelCadastroEstagio.php</file>
-            <file>file:/C:/xampp/htdocs/pin2-master/euler-front/view/cadastro-concedente.blade.php</file>
-            <file>file:/C:/xampp/htdocs/pin2-master/euler-front/public/JS/js_cadastro_usuario.js</file>
-            <file>file:/C:/xampp/htdocs/pin2-master/euler-front/controller/HomeController.php</file>
-            <file>file:/C:/xampp/htdocs/pin2-master/euler-front/model/conectar.php</file>
-            <file>file:/C:/xampp/htdocs/pin2-master/euler-front/model/ModelCadastroConcedente.php</file>
-            <file>file:/C:/xampp/htdocs/pin2-master/euler-front/view/home.blade.php</file>
-            <file>file:/C:/xampp/htdocs/pin2-master/euler-front/model/ModelCadastroUsuario.php</file>
-            <file>file:/C:/xampp/htdocs/pin2-master/euler-front/view/login.blade.php</file>
-            <file>file:/C:/xampp/htdocs/pin2-master/euler-front/public/JS/js_global.js</file>
-            <file>file:/C:/xampp/htdocs/pin2-master/euler-front/public/css/style.css</file>
-        </group>
-    </open-files>
 </project-private>

@@ -44,7 +44,7 @@ $sTelefone = $_POST['telefone'];
 $sCelular = $_POST['celular'];
 $iMatricula = $_POST['matricula'];
 
-//$sSenha = md5($_POST['senha']);
+$sSenha = md5($_POST['senha']);
 //$iTipoUsu = $_POST['tipo_usu'];
 
 $insert = "INSERT INTO endereco (
@@ -107,26 +107,14 @@ while($row = pg_fetch_row($ret)) {
 }
 $iCodPes = $iCodPes[0];
 
-$sql = "SELECT MAX(id_usuario) FROM usuario";
-
-$retUsu = pg_query($conexao, $sql);
-$iCodUsu;
-
-while($row = pg_fetch_row($retUsu)) {
-    $iCodUsu = $row;
-}
-$iCodUsu = $iCodUsu[0] + 1;
-
 $insert = "INSERT INTO usuario(
-                       id_usuario,
                        senha,
                        id_pessoa,
                        tipo_usuario 
                        ) VALUES (
-                       {$iCodUsu},
                        '{$sSenha}',
                        {$iCodPes},
-                       {$iTipoUsu} ); ";
+                       0 ); ";
 
 exec_sql($bErro, $insert, $conexao);
 
@@ -135,7 +123,6 @@ if(!$bErro) {
 }
 else {
     rollback($conexao);
-//    echo pg_last_error($conexao);
 }
 
 Desconectar($conexao);

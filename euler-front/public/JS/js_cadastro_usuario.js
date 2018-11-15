@@ -14,30 +14,19 @@ $(document).ready(function() {
    $('#matricula').attr('title', 'Campo destinado ao seu telefone EX: 0000000000');
 });
 
-function validaCadatro(data)
+function validaSenha()
 {
-    let sNome = $('#nome').val();
-    let sCpf = $('#cpf').val();
-    let iRg = $('#rg').val();
-    let dDataNasc = $('#data-nascimento').val();
-    let sLograd = $('#logradouro').val();
-    let iNumero = $('#numero').val();
-    let sBairro = $('#bairro').val();
-    let sCep = $('#cep').val();
-    let sCidade = $('#cidade').val();
-    let sUf = $('#uf').val();
-    let sEmail = $('#email').val();
-    let sFone = $('#telefone').val();
-    let sCelular = $('#celular').val();
-    let sMatricula = $('#matricula').val();
+    let senha = $('#senha').val();
+    let conSenha = $('#conf_senha').val();
     
-//    let data = new Date();
-    console.log(data);
-//    if(dDataNasc > )
-//    {
-//        
-//    }
-    
+    if(senha !== conSenha) {
+        $('#conf_senha').attr('title', 'As Senhas não são iguais!');
+        document.getElementById("conf_senha").classList.add("erro");
+    }
+    else {
+        $('#conf_senha').removeAttr('title');
+        document.getElementById("conf_senha").classList.remove("erro");
+    }
 }
 //$("input").keydown(function(event){ 
 //    $("div").html("Key: " + event.which);
