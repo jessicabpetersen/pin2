@@ -50,15 +50,19 @@
                                     <option value="2">Segundo</option>
                                 </select>
                             </div>
-                            <div class="form-group col-md-3">
+                            <div class="form-group col-md-2">
                                 <label for="curso">Curso</label>
-                                <select name="curso" id="curso" class="campo_select">
-                                    <option value="eso">ESO - Engenharia de Software</option>
+                                <select class="campo_select" id="curso" >
+                                    <option value=0>Selecione</option>
+                                    <?php $__currentLoopData = $cursos; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $curso): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                    <option value=<?php echo e($curso['id']); ?>><?php echo e($curso['nome']); ?></option>
+                                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                 </select>
                             </div>
                             <div class="form-group col-5 col-md-2 col-lg-1">
                                 <label for="area">Área</label>
                                 <select class="campo_select" id="area">
+                                    <option value='0'>Selecione</option>
                                     <?php $__currentLoopData = $areas; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $area): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                     <option value=<?php echo e($area['id']); ?>><?php echo e($area['nome']); ?></option>
                                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -92,11 +96,6 @@
                                     <label for="horario-final">Término</label>
                                     <input style="margin-left: 20px;" type="time" class="form-control" id="horario-final" name="horario-final[]" required>
                                 </div>
-                            </div>
-                            <div id='destino'></div>
-                            <div class="form-group">
-                                <button id="add_campo" type="button" class="btn btn-primary" onclick="adicionaCampos();">Adicionar</button>
-                                <button id="remove_campo" type="button" class="btn btn-primary" onclick="removeCampos();">Remover</button>
                             </div>
                         </div>
                         <div class="form-row">

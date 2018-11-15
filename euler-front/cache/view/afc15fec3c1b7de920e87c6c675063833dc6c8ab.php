@@ -20,7 +20,7 @@
             <form>
                 <div class="form-group">
                     <label for="login">Login</label>
-                    <input type="text" class="form-control" id="login" aria-describedby="Login" placeholder="">
+                    <input type="text" class="form-control cpf" id="login" aria-describedby="Login" placeholder="">
                 </div>
                 <div class="form-group">
                     <label for="senha">Senha</label>

@@ -51,15 +51,19 @@
                                     <option value="2">Segundo</option>
                                 </select>
                             </div>
-                            <div class="form-group col-md-3">
+                            <div class="form-group col-md-2">
                                 <label for="curso">Curso</label>
-                                <select name="curso" id="curso" class="campo_select">
-                                    <option value="eso">ESO - Engenharia de Software</option>
+                                <select class="campo_select" id="curso" >
+                                    <option value=0>Selecione</option>
+                                    @foreach($cursos as $curso)
+                                    <option value={{$curso['id']}}>{{$curso['nome']}}</option>
+                                    @endforeach
                                 </select>
                             </div>
                             <div class="form-group col-5 col-md-2 col-lg-1">
                                 <label for="area">Área</label>
                                 <select class="campo_select" id="area">
+                                    <option value='0'>Selecione</option>
                                     @foreach($areas as $area)
                                     <option value={{$area['id']}}>{{$area['nome']}}</option>
                                     @endforeach
@@ -93,11 +97,6 @@
                                     <label for="horario-final">Término</label>
                                     <input style="margin-left: 20px;" type="time" class="form-control" id="horario-final" name="horario-final[]" required>
                                 </div>
-                            </div>
-                            <div id='destino'></div>
-                            <div class="form-group">
-                                <button id="add_campo" type="button" class="btn btn-primary" onclick="adicionaCampos();">Adicionar</button>
-                                <button id="remove_campo" type="button" class="btn btn-primary" onclick="removeCampos();">Remover</button>
                             </div>
                         </div>
                         <div class="form-row">

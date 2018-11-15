@@ -1,3 +1,10 @@
+<?php
+    if (!isset($_SESSION)) {
+        session_start();
+    }
+?>
+
+
 <?php $__env->startSection('title', 'Home'); ?>
 
 <?php $__env->startSection('content'); ?>
@@ -36,22 +43,76 @@
     <div class="container" id="home">
         <div class="row">
             <div class="col">
-                <p >Nome: <label id="labelnome"></label></p>
-                <p>CPF: <label id="labelcpf"></label><span id="rg">RG:<label id="labelrg"></label></span></p>
-                <p>Data de Nascimento: <label id="labeldatanascimento"></label></p></br>
-                <p>Endereço </p>
-                <p>Logradouro: <label id="labalogradouro"></label><span id="numero">Número: <label id="labelnumero"></label></span></p>
-                <p>Bairro <label id="labelbairro"></label><span id="cep">CEP: </span><label id="labelcep"></label></p>
-                <p>Cidade - UF: <label id="labelcidade"></label> - <label id="labeluf"></label></p></br>
-                <p>Contato</p>
-                <p>E-mail: <label id="labelemail"></label></p>
-                <p>Telefone: <label id="labeltelefone"></label><span id="celular">Celular: </span><label id="labelcelular"></label></p></br>
-                <p>Curso</p>
-                <p>Nome do Curso: <label id="labelcurso"></label></p>
-                <p>Matricula: <label id="labelmatricula"></label></p>
+                <table>
+                    <tr>
+                        <td style=" font-weight: bold">Informações Pessoais </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 70%">Nome:</td>
+                        <td style="width: 30%">CPF:</td>
+                    </tr>
+                    <tr>
+                        <td style="width: 70%"><label id="labelnome"></label></td>
+                        <td style="width: 30%"><label id="labelcpf"></label></td>
+                    </tr>
+                    <tr>
+                        <td style="width: 70%">RG: </td>
+                        <td style="width: 30%">Data de Nascimento:</td>
+                    </tr>
+                    <tr>
+                        <td style="width: 70%"><label id="labelrg"></label></td>
+                        <td style="width: 30%"><label id="labeldatanascimento"></label></td>
+                        
+                    </tr>
+                    <tr>
+                        <td style=" font-weight: bold">Endereço</td>
+                    </tr>
+                    <tr>
+                        <td style="width: 70%">Logradouro:</td>
+                        <td style="width: 30%">Número:</td>
+                    </tr>
+                    <tr>
+                        <td style="width: 70%"><label id="labalogradouro"></label></td>
+                        <td style="width: 30%"><label id="labelnumero"></label></td>
+                    </tr>
+                    <tr>
+                        <td style="width: 70%">Bairro:</td>
+                        <td style="width: 30%">CEP:</span></td>
+                    </tr>
+                    <tr>
+                        <td style="width: 70%"><label id="labelbairro"></label></td>
+                        <td style="width: 30%"><label id="labelcep"></label></td>
+                        
+                    </tr>
+                    <tr>
+                        <td>Cidade - UF:</td>
+                    </tr>
+                    <tr>
+                        <td><label id="labelcidade"></label> - <label id="labeluf"></label></td>
+                    </tr>
+                    <tr>
+                        <td style=" font-weight: bold">Contato</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">E-mail:</td>
+                    </tr>
+                        <td><label id="labelemail"></label></td>
+                    <tr>
+                        <td style="width: 70%">Telefone:</td>
+                        <td style="width: 30%">Celular:</td>
+                    </tr>
+                    <tr>
+                        <td style="width: 70%"><label id="labeltelefone"></label></td>
+                        <td style="width: 30%"><label id="labelcelular"></label></td>
+                    </tr>
+                </table>
             </div>
         </div>
     </div>
 </div>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('scripts'); ?>
+<script src="/pin2-master/euler-front/public/JS/js_home_principal.js" type="text/javascript"></script>
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('layout.app', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>

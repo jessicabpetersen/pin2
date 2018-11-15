@@ -28,40 +28,37 @@
                         <li><a>Documento 3</a></li>
                     </ul>
                 </li>
-
             </ul>
-        </nav>
+        </nav>    
     </div>
+    
     <div class="container" id="home">
         <div class="row">
             <div class="col">
                 <fieldset>
-                    <legend>Dashboard Administrador</legend>
                     <div id="divCadastroApolice" style="display: none">
-                        <form method="POST" action="/pin2-master/euler-front/model/ModelCadastroHomeAdm.php">
                             <input type="hidden" name='method' value='insertApolice'>
                             <fieldset>
                                 <legend>Cadastro Apólice</legend>
                                 <div class="form-row">
                                     <div class="form-group col-md-3">
                                         <label for="numeroApolice">Nº Apólice</label>
-                                        <input type="text" class="form-control" id="nApolice" name="Numero Apolice" required>
+                                        <input type="text" class="form-control rg" id="nApolice" name="nApolice" required>
                                     </div>
                                     <div class="form-group col-md-3">
                                         <label for="valor">Valor</label>
-                                        <input type="text" class="form-control" id="valorApolice" name="Valor Apolice">
+                                        <input type="text" class="form-control money" id="valorApolice" name="valorApolice">
                                     </div>
                                     <div class="form-group col-md-3">
                                         <label for="seguradora">Seguradora</label>
-                                        <input type="text" class="form-control seguradora" id="seguradora" name="Seguradora Apolice">
+                                        <input type="text" class="form-control seguradora" id="seguradora" name="seguradora">
                                     </div>
                                 </div>
                                 <div class="form-row">
-                                    <button id="buttonCadastrarApolice" type="submit" class="btn btn-primary">Salvar</button>
+                                    <button id="buttonCadastrarApolice" type="submit" class="btn btn-primary" onclick="salvarApoplice()">Salvar</button>
                                     <button id="buttonCadastrarApolice" style="margin-left: 5px" onclick="Mudarestado('divCadastroApolice')" class="btn btn-primary">Cancelar</button>
                                 </div>
                             </fieldset>
-                        </form>
                     </div>
                 </fieldset>
                 <div id="divCadastroArea" style="display: none">
@@ -71,6 +68,7 @@
                             <div class="form-group col-md-3">
                                 <label for="Curso">Curso</label>
                                 <select class="campo_select" id="curso">
+                                    <option value='0'>Selecione</option>
                                     <?php $__currentLoopData = $cursos; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $curso): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                     <option value=<?php echo e($curso['id']); ?>><?php echo e($curso['nome']); ?></option>
                                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -86,7 +84,7 @@
                             </div>
                         </div>
                         <div class="form-row">
-                            <button id="buttonCadastrarArea" type="submit" class="btn btn-primary">Salvar</button>
+                            <button id="buttonCadastrarArea" type="submit" onclick="salvarArea()" class="btn btn-primary">Salvar</button>
                             <button id="buttonCadastrarArea" style="margin-left: 5px" onclick="Mudarestado('divCadastroArea')" class="btn btn-primary">Cancelar</button>
                         </div>
                     </fieldset>
@@ -99,7 +97,7 @@
                             <input type="text" class="form-control" id="professorOrientador" name="Professor Orientador" required>
                         </div>
                         <div class="form-row">
-                            <button id="buttonCadastrarOrientador" type="submit" class="btn btn-primary">Salvar</button>
+                            <button id="buttonCadastrarOrientador" type="submit" onclick="salvarOrientador()" class="btn btn-primary">Salvar</button>
                             <button id="buttonCadastrarOrientador" style="margin-left: 5px" onclick="Mudarestado('divCadastroOrientador')" class="btn btn-primary">Cancelar</button>
                         </div>
                     </fieldset>
@@ -110,8 +108,8 @@
                         <div class="center">
                             <table>
                                 <tr>
-                                        <th width='15%'>Finalizado</th>
-                                    <th width='15%'>Código</th>
+                                    <th width='10%'>Finalizado</th>
+                                    <th width='9%'>Código</th>
                                     <th width='15%'>Tipo</th>
                                     <th width='15%'>Local</th>
                                     <th width='20%'>Supervissor</th>

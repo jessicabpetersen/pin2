@@ -58,8 +58,8 @@ $insert = "INSERT INTO endereco (
                        '{$sLograd}',
                        {$iNumero},
                        '{$sBairro}',
-                       '{$sCep}',
                        '{$sCidade}',
+                       '{$sCep}',
                        '{$sUf}'); ";
 
 exec_sql($bErro, $insert, $conexao);
@@ -120,6 +120,8 @@ exec_sql($bErro, $insert, $conexao);
 
 if(!$bErro) {
     commit($conexao);
+    $_SESSION['codusuario'] = $iCodPes;
+    header("location: http://localhost/pin2-master/euler-front/home");
 }
 else {
     rollback($conexao);

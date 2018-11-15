@@ -10,7 +10,7 @@
     $('.telefone').mask('(00) 0000-0000');
     $('.celular').mask('(00) 00000-0000');
     $('.rg').mask('000000000000000');
-    $('.money').mask('000.000.000.000.000,00');
+    $('.money').mask('0.000,00');
  });
  
  function so_numero(num , er)

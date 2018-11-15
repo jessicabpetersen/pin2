@@ -20,8 +20,9 @@ function validaSenha()
     let conSenha = $('#conf_senha').val();
     
     if(senha !== conSenha) {
-        $('#conf_senha').attr('title', 'As Senhas não são iguais!');
+        alert('As Senhas não são iguais!');
         document.getElementById("conf_senha").classList.add("erro");
+        $('#conf_senha').val('');
     }
     else {
         $('#conf_senha').removeAttr('title');
@@ -51,7 +52,6 @@ function provarProFarahQueEuSeiUsarMetodo(msg)
     {
         if(aRes == 0) {
             alert('Ele ta preso, Babaca');
-//            location.href='/pin2-master/euler-front/login?cpf='+sCpf;
             $('#cpf').val('');
         }
     });

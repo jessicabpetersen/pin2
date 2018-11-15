@@ -1,7 +1,3 @@
-//$(document).ready(function(){
-//   let sCpf = '<?= $_GET["cpf"]; ?>';
-//   $('#login').val(sCpf); 
-//});
 
 function validaLogin()
 {
@@ -10,8 +6,9 @@ function validaLogin()
     
     $.ajax(
     {
-        url : "/pin2-master/euler-front/controller/ControllerLogin.php",
-        type : 'get',
+        url : "/pin2-master/euler-front/model/ModelLogin.php",
+        type : 'POST',
+        assync: false,
         dataType: 'html', // json
         data : 
         {
@@ -22,16 +19,18 @@ function validaLogin()
     })
     .done(function(aRes)
     {
-        if(aRes.sucesso === 1)
+        if(aRes == 1)
         {
-            location.href='';
+            location.href='http://localhost/pin2-master/euler-front/home';
         }
         else
         {
+            
             $('#login').val('');
             $('#senha').val('');
             alert('Login e Senha incorretos');
         }
     });
+    
 }
 

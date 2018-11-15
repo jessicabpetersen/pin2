@@ -34,3 +34,83 @@ function carregaEstagios()
         }
     });
 }
+
+function salvarApoplice()
+{
+    let iApolice = $('#nApolice').val();
+    let xValor   = $('#valorApolice').val();
+    let sSegura  = $('#seguradora').val();
+    
+    $.ajax({
+        url : "/pin2-master/euler-front/model/ModelCadastroHomeAdm.php",
+        type : 'POST',
+        dataType: 'html', // json
+        data : 
+        {
+            req : 'insertApolice',
+            nApolice: iApolice,
+            valorApolice : xValor,
+            seguradora : sSegura
+        }
+    })
+    .done(function(aRes)
+    {
+        if(aRes == 1) {
+            $('#nApolice').val('');
+            $('#valorApolice').val('');
+            $('#seguradora').val('');
+            $('#divCadastroApolice').hide();
+        }
+    });
+}
+
+function salvarArea()
+{
+    let iCurso = $('#curso').val();
+    let sArea  = $('#Area').val();
+    let sAtiv  = $('#Atividade').val();
+    
+    $.ajax({
+        url : "/pin2-master/euler-front/model/ModelCadastroHomeAdm.php",
+        type : 'POST',
+        dataType: 'html', // json
+        data : 
+        {
+            req : 'insertArea',
+            Area: sArea,
+            Atividade : sAtiv,
+            curso : iCurso
+        }
+    })
+    .done(function(aRes)
+    {
+        if(aRes == 1) {
+            $('#curso').val('0');
+            $('#Area').val('');
+            $('#Atividade').val('');
+        }
+    });
+}
+
+function salvarOrientador()
+{
+    let sSupervisor = $('#professorOrientador').val();
+    
+    $.ajax({
+        url : "/pin2-master/euler-front/model/ModelCadastroHomeAdm.php",
+        type : 'POST',
+        dataType: 'html', // json
+        data : 
+        {
+            req : 'updateOrientador',
+            supervisor: sSupervisor
+        }
+    })
+    .done(function(aRes)
+    {
+        if(aRes == 1) {
+            $('#professorOrientador').val('');
+            $('#divCadastroOrientador').hide();
+        }
+    });
+}

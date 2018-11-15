@@ -133,12 +133,12 @@
                             </div>
                             <div class="form-group col-md-3">
                                 <label for="conf_senha">Confirmar Senha</label>
-                                <input type="password" class="form-control" id="conf_senha" name="conf_senha" onkeyup="validaSenha()" maxlength="10" required>
+                                <input type="password" class="form-control" id="conf_senha" name="conf_senha" maxlength="10" required>
                             </div>
                         </div>
                     </fieldset>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary">Cadastrar</button>
+                        <button type="submit" class="btn btn-primary" onclick="validaSenha()">Cadastrar</button>
                     </div>
                 </form>
             </div>
