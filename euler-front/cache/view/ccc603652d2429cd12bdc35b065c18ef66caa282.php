@@ -36,7 +36,6 @@
         <div class="row">
             <div class="col">
                 <fieldset>
-                    <legend>Dashboard Administrador</legend>
                     <div id="divCadastroApolice" style="display: none">
                         <form method="POST" action="/pin2-master/euler-front/model/ModelCadastroHomeAdm.php">
                             <input type="hidden" name='method' value='insertApolice'>
@@ -110,7 +109,7 @@
                         <div class="center">
                             <table>
                                 <tr>
-                                        <th width='15%'>Finalizado</th>
+                                    <th width='15%'>Finalizado</th>
                                     <th width='15%'>Código</th>
                                     <th width='15%'>Tipo</th>
                                     <th width='15%'>Local</th>
@@ -125,6 +124,9 @@
                     </fieldset>
                 </div>
             </div>
+        </div>
+        <div class="row">
+            <button type="button" class="btn btn-success" style="margin-left: 15px; margin-top: 10px" onclick="salvaEstagios()">Salvar</button>
         </div>
     </div>
 </div>

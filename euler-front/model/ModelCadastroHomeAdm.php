@@ -66,13 +66,10 @@ require_once 'conectar.php';
                        nome_coordenador as coordenador,
                        ano,
                        semestre,
-<<<<<<< HEAD
-                  case when finalizado = 1 then '<input type=\"checkbox\" id=\"finalizado\" disabled checked=\"true\" value=\"'||id_estagio||'\">'
-			else '<input type=\"checkbox\" id=\"finalizado\" value=\"'||id_estagio||'\">'
-=======
-                  case when finalizado = 1 then '<input type=\"checkbox\" checked=\"true\" value=\"||id_estagio||\">'
+
+                 case when finalizado = 1 then '<input type=\"checkbox\" disabled=\"true\" checked=\"true\" value=\"||id_estagio||\">'
 			else '<input type=\"checkbox\"  value=\"||id_estagio||\">'
->>>>>>> 7b09908c9b18198e127b6aac769a065528c2c356
+
                        end as finalizado
                   FROM estagio";
 
