@@ -110,7 +110,11 @@
                         <div class="center">
                             <table>
                                 <tr>
+<<<<<<< HEAD
                                     <th width='15%'>Finalizado</th>
+=======
+                                        <th width='15%'>Finalizado</th>
+>>>>>>> 7b09908c9b18198e127b6aac769a065528c2c356
                                     <th width='15%'>Código</th>
                                     <th width='15%'>Tipo</th>
                                     <th width='15%'>Local</th>
