@@ -149,65 +149,13 @@ if(isset($_POST['req']) && $_POST['req'] == 'selectEstagio') {
     exit;
 }
 
-        $sql = "SELECT id_estagio,
-                  case when obrigatorio::integer = 1 then 'Obrigatório' else 'Não Obrigatório'
-                       end as obrigatorio,
-                       local_estagio as local,
-                       supervisor,
-                       nome_coordenador as coordenador,
-                       ano,
-                       semestre,
-
-                 case when finalizado = 1 then '<input type=\"checkbox\" disabled=\"true\" checked=\"true\" value=\"||id_estagio||\">'
-			else '<input type=\"checkbox\"  value=\"||id_estagio||\">'
-
-                       end as finalizado
-                  FROM estagio";
-
-        $ret = pg_query($conexao, $sql);
-        $i = 0;
-        $sHtml = '<table>';
-        while($row = pg_fetch_row($ret)) {
-            $sHtml .= '<tr>';
-            $sHtml .= ' <td>';
-            $sHtml .= "     $row[7]";
-            $sHtml .= " </td>";
-            $sHtml .= ' <td>';
-            $sHtml .= "     $row[0]";
-            $sHtml .= " </td>";
-            $sHtml .= ' <td>';
-            $sHtml .= "     $row[1]";
-            $sHtml .= " </td>";
-            $sHtml .= ' <td>';
-            $sHtml .= "     $row[2]";
-            $sHtml .= " </td>";
-            $sHtml .= ' <td>';
-            $sHtml .= "     $row[3]";
-            $sHtml .= " </td>";
-            $sHtml .= ' <td>';
-            $sHtml .= "     $row[4]";
-            $sHtml .= " </td>";
-            $sHtml .= ' <td>';
-            $sHtml .= "     $row[5]";
-            $sHtml .= " </td>";
-            $sHtml .= ' <td>';
-            $sHtml .= "     $row[6]";
-            $sHtml .= " </td>";
-            $sHtml .= "</tr>";
-        }
-        $sHtml .= '</table>';
-        echo $sHtml;
+if(isset($_POST['req']) && $_POST['req'] == 'finalizados') {
+    $conexao = Conectar();
+    $SQL = "UPDATE estagio
+               SET finalizado = 1
+             WHERE id_estagio = $1";
+    foreach($_POST["linhas"] as $linha) {
+        $oQuery = pg_query_params($conexao, $SQL, [$linha]);
+        pg_exec($conexao, $oQuery);
     }
-    
-    if(isset($_POST['req']) && $_POST['req'] == 'finalizados') {
-        $conexao = Conectar();
-        $SQL = "UPDATE estagio
-                   SET finalizado = 1
-                 WHERE id_estagio = $1";
-        foreach($_POST["linhas"] as $linha) {
-            $oQuery = pg_query_params($conexao, $SQL, [$linha]);
-            pg_exec($conexao, $oQuery);
-        }
-    }
-//}
-
+}

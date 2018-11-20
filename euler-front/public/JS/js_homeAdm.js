@@ -67,8 +67,31 @@ function salvarApoplice()
 function salvarArea()
 {
     let iCurso = $('#curso').val();
-    let sArea  = $('#Area').val();
-    let sAtiv  = $('#Atividade').val();
+    let sArea   = $('#Area').val();
+    let sAtividade  = $('#Atividade').val();
+    
+    $.ajax({
+        url : "/pin2-master/euler-front/model/ModelCadastroHomeAdm.php",
+        type : 'POST',
+        dataType: 'html', // json
+        data : 
+        {
+            req : 'insertArea',
+            curso: iCurso,
+            Area : sArea,
+            Atividade : sAtividade
+        }
+    })
+    .done(function(aRes)
+    {
+        if(aRes == 1) {
+            $('#curso').val('0');
+            $('#Area').val('');
+            $('#Atividade').val('');
+        }
+    });
+}
+
 
 function salvaEstagios() {
     let linhas = [];
@@ -123,10 +146,3 @@ function salvarOrientador()
         }
     });
 }
-
-            req : 'finalizados',
-            linhas : linhas
-        }
-    });
-}
-

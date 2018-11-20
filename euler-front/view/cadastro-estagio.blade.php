@@ -85,7 +85,41 @@
                                     <label for="turno">Turno</label>
                                     <select name="turno[]" id="turno_" class="campo_select" required>
                                         <option value="1">Matutino</option>
-                                        <option value="2">Vespertimo</option>
+                                    </select>
+                                </div>
+                            <div class="form-group col-6 col-md-2">
+                                    <label for="horario-inicial">Início</label>
+                                    <input style="margin-left: 20px;" type="time" class="form-control" id="horario-inicial" name="horario-inicial[]" required>
+                                </div>
+                            <div class="form-group col-6 col-md-2">
+                                    <label for="horario-final">Término</label>
+                                    <input style="margin-left: 20px;" type="time" class="form-control" id="horario-final" name="horario-final[]" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="form-row" id='tobecloned'>
+                                <div class="form-group col-md-3 col-lg-1">
+                                    <label for="turno">Turno</label>
+                                    <select name="turno[]" id="turno_" class="campo_select" required>
+                                        <option value="2">Vespertino</option>
+                                    </select>
+                                </div>
+                            <div class="form-group col-6 col-md-2">
+                                    <label for="horario-inicial">Início</label>
+                                    <input style="margin-left: 20px;" type="time" class="form-control" id="horario-inicial" name="horario-inicial[]" required>
+                                </div>
+                            <div class="form-group col-6 col-md-2">
+                                    <label for="horario-final">Término</label>
+                                    <input style="margin-left: 20px;" type="time" class="form-control" id="horario-final" name="horario-final[]" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="form-row" id='tobecloned'>
+                                <div class="form-group col-md-3 col-lg-1">
+                                    <label for="turno">Turno</label>
+                                    <select name="turno[]" id="turno_" class="campo_select" required>
                                         <option value="3">Noturno</option>
                                     </select>
                                 </div>
