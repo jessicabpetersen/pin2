@@ -36,17 +36,18 @@ $sql = "SELECT MAX(id_periodo) FROM periodo";
 //}
 
 $bObrigatorio = isset($_POST['check-obrigatorio']) ? 1 : 2;
-$sObjetivo = isset($_POST['objetivos']) ? $_POST['objetivos'] : null;
-$sDescricao = isset($_POST['descricao']) ? $_POST['descricao'] : null;
-$sLocal_est = isset($_POST['local']) ? $_POST['local'] : null;
-$sSupervisor = isset($_POST['supervisor']) ? $_POST['supervisor'] : null;
-$sCargo_supervisor = isset($_POST['cargo-supervisor']) ? $_POST['cargo-supervisor'] : null;
-$iAno = isset($_POST['ano']) ? $_POST['ano'] : null;
-$iSemestre = isset($_POST['semestre']) ? $_POST['semestre'] : null;
-$sValor_bolsa = isset($_POST['valor-bolsa']) ? $_POST['valor-bolsa'] : null;
-$sValor_vale = isset($_POST['vale-transporte']) ? $_POST['vale-transporte'] : null;
-$iArea = isset($_POST['area']) ? $_POST['area'] : null;
-$iCurso = isset($_POST['curso']) ? $_POST['curso'] : null;
+$sObjetivo = isset($_POST['objetivos']) ? $_POST['objetivos'] : 'null';
+$sDescricao = isset($_POST['descricao']) ? $_POST['descricao'] : 'null';
+$sLocal_est = isset($_POST['local']) ? $_POST['local'] : 'null';
+$sSupervisor = isset($_POST['supervisor']) ? $_POST['supervisor'] : 'null';
+$sCargo_supervisor = isset($_POST['cargo-supervisor']) ? $_POST['cargo-supervisor'] : 'null';
+$iAno = isset($_POST['ano']) ? $_POST['ano'] : 'null';
+$iSemestre = isset($_POST['semestre']) ? $_POST['semestre'] : 'null';
+$sValor_bolsa = isset($_POST['valor-bolsa']) ? $_POST['valor-bolsa'] : 'null';
+$sValor_vale = isset($_POST['vale-transporte']) ? $_POST['vale-transporte'] : 'null';
+$iArea = isset($_POST['area']) ? $_POST['area'] : 'null';
+$iCurso = isset($_POST['curso']) ? $_POST['curso'] : 'null';
+$iConcedente = isset($_POST['conced']) ? $_POST['conced'] : 'null';
 
 $iApolice = getIDApolice($bObrigatorio);
 
@@ -60,11 +61,12 @@ $query = pg_query($conexao, $SQL);
 $oRes = pg_fetch_row($query);
 $iInstituicao = $oRes[0];
 
-$iAluno = isset($_SESSION["codusuario"]) ? $_SESSION["codusuario"] : 1;
+$iAluno = isset($_SESSION["codusuario"]) ? $_SESSION["codusuario"] : 48;
 
 
 $insertEsta = "INSERT INTO estagio (
-                           obrigatorio
+                           id_estagio,
+                           obrigatorio,
                            objetivo,
                            descricao,
                            local_estagio,
@@ -79,10 +81,11 @@ $insertEsta = "INSERT INTO estagio (
                            id_apolice,
                            id_aluno,
                            id_instituicao,
-                           id_concendente,
+                           id_concedente,
                            id_curso
                            ) VALUES (
-                           {$bObrigatorio},
+                           (select coalesce(max(id_estagio),0)+1 from estagio),
+                           {$bObrigatorio}::bit,
                            '{$sObjetivo}',
                            '{$sDescricao}',
                            '{$sLocal_est}',
@@ -122,4 +125,4 @@ function getIDApolice($bObrigatorio) {
         return $id;
     }
 }
-//header("location: http://localhost/pin2-master/euler-front/home");;
+header("location: http://localhost/pin2-master/euler-front/home");

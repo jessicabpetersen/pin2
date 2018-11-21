@@ -74,6 +74,20 @@
                     <fieldset>
                             <legend>Concedente</legend>
                         <div class="form-row">
+                                <div class="form-group col-5 col-md-2 col-lg-1">
+                                    <label for="conced">Concedente</label>
+                                    <select class="campo_select" id="conced">
+                                        <option value='0'>Selecione</option>
+                                        @foreach($concedente as $concedentes)
+                                        <option value={{$concedentes['id']}}>{{$concedentes['nome']}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="form-group col-6 col-md-2">
+                                    <a href="cadastro-concedente"><button type="button" class="btn btn-primary">Cadastrar</button></a>
+                                </div>
+                            </div>
+                        <div class="form-row">
                             <div class="form-group col-md-12">
                                 <label for="local">Local</label>
                                 <input type="text" class="form-control" id="local" name="local" maxlength="50" required>
