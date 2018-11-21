@@ -8,33 +8,6 @@ require_once 'conectar.php';
 
 $conexao = Conectar();
 
-$sql = "SELECT MAX(id_periodo) FROM periodo";
-
-//$ret = pg_query($conexao, $sql);;
-//
-//while($row = pg_fetch_row($ret)) {
-//    $iCodPeriodo = $row;
-//}
-//$iCodPeriodo = $iCodPeriodo[0] + 1;
-//
-//$aTurno = $_POST['turno'];
-////fim new cod, P.S. usar o mesmo o num de vezes max(3) q forem informados periodos
-//foreach($aTurno as $value => $key) {
-//    echo $key;
-//    $insertPeri = "INSERT INTO periodo (
-//                               id_periodo
-//                               turno,
-//                               inicio,
-//                               termino
-//                               ) VALUES (
-//                               {$iCodPeriodo},
-//                               {$iTipoTurno},
-//                               '{$sInicio}',
-//                               '{$sFim}' );";
-//
-//    exec_sql($bErro, $insertPeri, $conexao);
-//}
-
 $bObrigatorio = isset($_POST['check-obrigatorio']) ? 1 : 2;
 $sObjetivo = isset($_POST['objetivos']) ? $_POST['objetivos'] : 'null';
 $sDescricao = isset($_POST['descricao']) ? $_POST['descricao'] : 'null';
