@@ -12,6 +12,16 @@ $(document).ready(function() {
    $('#telefone').attr('title', 'Campo destinado ao seu telefone EX: (00) 0000-0000');
    $('#celular').attr('title', 'Campo destinado ao seu telefone EX: (00) 0000-0000');
    $('#matricula').attr('title', 'Campo destinado ao seu telefone EX: 0000000000');
+
+   $('#perfil-administrador').on('click', function(){
+       if ($('#perfil-administrador').is(":checked")) {
+           $('#senha-administrador').attr('required', 'required');
+           $('#box-senha-administrador').show();
+       } else {
+           $('#senha-administrador').removeAttr('required');
+           $('#box-senha-administrador').hide();
+       }
+   });
 });
 
 function validaSenha()
