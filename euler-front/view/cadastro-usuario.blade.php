@@ -19,8 +19,8 @@
         <div class="row">
             <div class="col">
                 <h2>Cadastro de Usuário</h2>
-
-                <?php
+				
+				<?php
                     if(isset($_GET['erro']) and $_GET['erro'] == 1){
                         $html = '<div class="alert alert-danger" role="alert">';
                         $html .= 'Senha de administrador incorreta!';
@@ -28,8 +28,8 @@
                         echo $html;
                     }
                 ?>
-
-                <form method="post" action="/pin2-master/euler-front/model/ModelCadastroUsuario.php" id="form-cadastro-usuario">
+				
+                <form method="post" action="/pin2-master/euler-front/model/ModelCadastroUsuario.php">
                     <fieldset>
                         <legend>Pessoal</legend>
                         <div class="form-row">
@@ -148,7 +148,7 @@
                             </div>
                         </div>
                     </fieldset>
-                    <fieldset>
+					<fieldset>
                         <div class="form-row">
                             <div class="form-group form-check">
                                 <input type="checkbox" class="form-check-input" id="perfil-administrador" name="perfil-administrador">

@@ -31,10 +31,10 @@ $insert = "INSERT INTO endereco (
                        uf
                        ) VALUES (
                        '{$sLograd}',
-                       $iNumero,
+                        $iNumero,
                        '$sBairro',
-                       '$sCep',
                        '$sCidade',
+                       '$sCep',                       
                        '$sUf'); ";
                        
 $qry = pg_query($conexao, $insert);

@@ -7,10 +7,10 @@ require_once 'conectar.php';
 
 $conexao = Conectar();
 
-if(isset($_POST['req']) && $_POST['req'] == 'getLoginUsuario') {
-    
-    $existe = 0;
-    $sSenha = ($_POST['senha']);
+//if(isset($_POST['req']) && $_POST['req'] == 'getLoginUsuario') {
+//    echo 'teste';
+//    $ret['sucesso'] = 0;
+    $sSenha = md5($_POST['senha']);
     
     $sql = " select senha,
                     cpf,
@@ -28,10 +28,13 @@ if(isset($_POST['req']) && $_POST['req'] == 'getLoginUsuario') {
         }
         
         $_SESSION['codusuario'] = $iCod;
-        $existe = 1;
+        $ret['sucesso'] = 1;
+        header("location:http://localhost/pin2-master/euler-front/home");
     }
     else {
-        $existe = 0;
+        header("location:http://localhost/pin2-master/euler-front/login?errodelogin");
+
     }
-    echo $existe;
-}
+//    echo json_encode($ret['sucesso']);
+//    exit;
+//}

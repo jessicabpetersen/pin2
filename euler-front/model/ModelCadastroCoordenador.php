@@ -1,5 +1,3 @@
-
-
 <?php
 
 if (!isset($_SESSION)) {
@@ -45,9 +43,6 @@ $sEmail = $_POST['email'];
 $sTelefone = $_POST['telefone'];
 $sCelular = $_POST['celular'];
 $iMatricula = $_POST['matricula'];
-
-//$sSenha = md5($_POST['senha']);
-//$iTipoUsu = $_POST['tipo_usu'];
 
 $insert = "INSERT INTO endereco (
                        logradouro,
@@ -109,8 +104,12 @@ while($row = pg_fetch_row($ret)) {
 }
 $iCodPes = $iCodPes[0];
 
+$update = "update instituicao set id_coordenador = $iCodPes";
+exec_sql($bErro, $update, $conexao);
+
 if(!$bErro) {
     commit($conexao);
+    header("location:http://localhost/pin2-master/euler-front/homeAdm");
 }
 else {
     rollback($conexao);

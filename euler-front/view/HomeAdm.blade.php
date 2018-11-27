@@ -19,10 +19,11 @@
                         <li><a onclick="Mudarestado('divCadastroApolice')">Apolice de Seguro</a></li>
                         <li><a onclick="Mudarestado('divCadastroArea')">Area de Estagio</a></li>
                         <li><a onclick="Mudarestado('divCadastroOrientador')">Professor Orientador</a></li>
+                        <li><a onclick="Mudarestado('divCadastroCurso')">Cursos</a></li>
                         <li><a href="cadastro-coordenador">Coordenador Geral</a></li>
                     </ul>
                 </li>
-                <li><a href="#">Impressões</a>
+                <li><a >Impressões</a>
                     <ul>
                         <li><a>Documento 1</a></li>
                         <li><a>Documento 2</a></li>
@@ -103,20 +104,33 @@
                         </div>
                     </fieldset>
                 </div>
+                <div style="display: none" id="divCadastroCurso">
+                    <fieldset>
+                        <legend>Cadastro Curso</legend>
+                        <div class="form-group">
+                            <label for="nomeOrientador">Curso</label>
+                            <input type="text" class="form-control" id="Curso" name="Curso" required>
+                        </div>
+                        <div class="form-row">
+                            <button id="buttonCadastrarCurso" type="submit" onclick="salvarOrientador()" class="btn btn-primary">Salvar</button>
+                            <button id="buttonCadastrarCUrso" style="margin-left: 5px" onclick="Mudarestado('divCadastroCurso')" class="btn btn-primary">Cancelar</button>
+                        </div>
+                    </fieldset>
+                </div>
                 <div id="gridAdm" style="display: block;">
                     <fieldset>
                         <legend>Estágios Cadastrados</legend>
                         <div class="center">
                             <table>
                                 <tr>
-                                    <th width='10%'>Finalizado</th>
-                                    <th width='9%'>Código</th>
-                                    <th width='15%'>Tipo</th>
-                                    <th width='15%'>Local</th>
-                                    <th width='20%'>Supervissor</th>
-                                    <th width='20%'>Coordenador</th>
-                                    <th width='15%'>Ano</th>
-                                    <th width='15%'>Semestre</th>
+                                    <th width='18%'>Estagiário</th>
+                                    <th width='18%'>Concedente</th>
+                                    <th width='10%'>Curso</th>
+                                    <th width='18%'>Orientador</th>
+                                    <th width='6%'>Ano</th>
+                                    <th width='8%'>Semestre</th>
+                                    <th width='13%'>Validação</th>
+                                    <th width='8%'>Finalizado</th>
                                 </tr>
                                 <tbody id='teste'></tbody>
                             </table>

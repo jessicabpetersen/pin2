@@ -17,55 +17,36 @@ $(document).ready(function() {
    $('#check-nao-obrigatorio').attr('title', ' ');
    $('#check-obrigatorio').attr('title', ' ');
    $('#seguradora').attr('title', 'Nome da empresa seguradora ');
+    checarEstagio();
 });
 
-let bParada = 0;
 
-function adicionaCampos()
-{
-    if(bParada < 2) {
-        let hidden = document.createElement('input');
-        hidden.setAttribute('type', 'hidden');
-        hidden.setAttribute('id', 'turno_' + bParada);
-        
-        let clone = document.getElementById('tobecloned').cloneNode(true),
-        destino = document.getElementById('destino');
-        
-        destino.appendChild(clone);
-        
-        let campos = clone.getElementsByTagName('input');
-        for(let i in campos) {
-            campos[i].value = '';
-        }
-        destino.appendChild(hidden);
-//        let teste = $('[id=turno_]');
-////        console.log(teste);
-//        for(let y in teste) {
-//            $('[id=turno_]').prop('id', 'turno_' + bParada);
-//        } 
-//        let x = $('#turno').val();;
-//        alert(x);
-        bParada++;
-     }
-}
+function desabilitapolice() {
+        $.ajax({
+            url: "/pin2-master/euler-front/model/ModelCadastroEstagio.php",
+            type: 'POST',
+            dataType: 'JSON', // json
+            data:
+                {
+                    req: 'getApolice'
+                }
+        })
+            .done(function (aRes) {
+                console.log(aRes);
+                if (aRes) {
+                    $('#numero').val(aRes.numero);
+                    $('#valor').val(aRes.val);
+                    $('#seguradora').val(aRes.seg);
+                }
+            });
 
-function removeCampos()
-{
-    let destino = document.getElementById('destino');
-    destino.removeChild(destino.childNodes[bParada - 1]);
-    bParada--;
-}
+        var numero = document.getElementById('numero'),
+            valor = document.getElementById('valor'),
+            seguradora = document.getElementById('seguradora');
 
-
-function desabilitapolice(){
-    var numero          = document.getElementById('numero'),
-        valor           = document.getElementById('valor'),
-        seguradora      = document.getElementById('seguradora');
-
-    numero.disabled = true;
-    valor.disabled = true;
-    seguradora.disabled = true;
-    
+        numero.disabled = true;
+        valor.disabled = true;
+        seguradora.disabled = true;
 }
 
 function habilitapolice(){
@@ -76,4 +57,28 @@ function habilitapolice(){
     numero.disabled = false;
     valor.disabled = false;
     seguradora.disabled = false;
+
+    numero.value = '';
+    valor.value = '';
+    seguradora.value = '';
+}
+function checarEstagio(){
+
+    $.ajax({
+        url : "/pin2-master/euler-front/model/ModelCadastroEstagio.php",
+        type : 'POST',
+        dataType: 'html', // json
+        data :
+            {
+                req : 'checarEstagio'
+            }
+    })
+        .done(function(aRes)
+        {
+            if (aRes== 0) {
+                alert("Ja existe um estagio cadastrado nao finalizado ");
+                location.href = 'http://localhost/pin2-master/euler-front/home';
+
+            }
+        });
 }

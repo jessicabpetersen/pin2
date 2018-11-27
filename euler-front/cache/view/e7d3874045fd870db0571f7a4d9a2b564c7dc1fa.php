@@ -23,13 +23,12 @@
         </div>
         <nav id="menu">
             <ul class="dropdrown">
-                <li><a href="#">Cadastros</a>
+                <li><a >Cadastros</a>
                     <ul>
                         <li><a href="cadastro-estagio">Estágio</a></li>
-                        <li><a href="cadastro-concedente">Concedente</a></li>
                     </ul>
                 </li>
-                <li><a href="#">Impressões</a>
+                <li><a >Impressões</a>
                     <ul>
                         <li><a href="termo-de-compromisso"target="blank">Termo de compromisso</a></li>
                         <li><a href="plano_de_atividades" target="blank">Plano de Atividades</a></li>

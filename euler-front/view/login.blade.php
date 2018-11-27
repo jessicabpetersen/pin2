@@ -18,17 +18,17 @@
     </div>
     <div class="row altura-100 total-flex">
         <div class="col-10 col-sm-6 col-md-4 col-xl-3">
-            <form>
+            <form action="/pin2-master/euler-front/model/ModelLogin.php" method="post">
                 <div class="form-group">
                     <label for="login">Login</label>
-                    <input type="text" class="form-control cpf" id="login" aria-describedby="Login" placeholder="">
+                    <input type="text" class="form-control cpf" id="login" name="login" aria-describedby="Login" placeholder="">
                 </div>
                 <div class="form-group">
                     <label for="senha">Senha</label>
-                    <input type="password" class="form-control" id="senha" placeholder="">
+                    <input type="password" class="form-control" id="senha" name="senha" placeholder="">
                 </div>
                 <div class="form-group">
-                    <button type="submit" onclick="validaLogin()" class="btn btn-primary">Entrar</button>
+                    <button type="submit" class="btn btn-primary">Entrar</button>
                 </div>
                 <a href="recuperar-senha">Recuperar senha</a>
             </form>

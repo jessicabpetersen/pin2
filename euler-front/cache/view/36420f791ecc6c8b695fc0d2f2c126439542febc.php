@@ -27,15 +27,15 @@
                         <div class="form-row">
                             <div class="form-group col-md-12">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" value="obrigatorio" id="check-obrigatorio" name="tipo[]" onclick="desabilitapolice()">
+                                    <input class="form-check-input" type="radio" value="1" id="check-obrigatorio" name="tipo" onclick="desabilitapolice()">
                                     <label class="form-check-label" for="check-obrigatorio">
                                         Obrigatório
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" value="nao-obrigatorio" id="check-nao-obrigatorio" name="tipo[]" onclick="habilitapolice()">
+                                    <input class="form-check-input" type="radio" value="0" id="check-nao-obrigatorio" name="tipo" onclick="habilitapolice()">
                                     <label class="form-check-label" for="check-nao-obrigatorio">
-                                        Não obrigatório
+                                        Não Obrigatório
                                     </label>
                                 </div>
                             </div>
@@ -52,7 +52,7 @@
                             </div>
                             <div class="form-group col-md-2">
                                 <label for="curso">Curso</label>
-                                <select class="campo_select" id="curso" >
+                                <select class="campo_select" id="curso" name="curso">
                                     <option value=0>Selecione</option>
                                     <?php $__currentLoopData = $cursos; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $curso): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                     <option value=<?php echo e($curso['id']); ?>><?php echo e($curso['nome']); ?></option>
@@ -61,7 +61,7 @@
                             </div>
                             <div class="form-group col-5 col-md-2 col-lg-1">
                                 <label for="area">Área</label>
-                                <select class="campo_select" id="area">
+                                <select class="campo_select" id="area" name="area">
                                     <option value='0'>Selecione</option>
                                     <?php $__currentLoopData = $areas; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $area): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                     <option value=<?php echo e($area['id']); ?>><?php echo e($area['nome']); ?></option>
@@ -73,6 +73,23 @@
                     <fieldset>
                             <legend>Concedente</legend>
                         <div class="form-row">
+                                <div class="form-group col-5 col-md-2 col-lg-1">
+                                    <label for="conced">Concedente</label>
+                                    <select class="campo_select" id="conced" name="conced">
+                                        <option value='0'>Selecione</option>
+                                        <?php $__currentLoopData = $concedente; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $concedentes): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                        <option value=<?php echo e($concedentes['id']); ?>><?php echo e($concedentes['nome']); ?></option>
+                                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                                    </select>
+                                </div>
+
+                            </div>
+                        <div class="form-row">
+                        <div class="form-group col-6 col-md-2">
+                            <a href="cadastro-concedente"><button type="button" class="btn btn-primary">Cadastrar</button></a>
+                        </div>
+                        </div>
+                        <div class="form-row">
                             <div class="form-group col-md-12">
                                 <label for="local">Local</label>
                                 <input type="text" class="form-control" id="local" name="local" maxlength="50" required>
@@ -82,19 +99,53 @@
                             <div class="form-row" id='tobecloned'>
                                 <div class="form-group col-md-3 col-lg-1">
                                     <label for="turno">Turno</label>
-                                    <select name="turno[]" id="turno_" class="campo_select" required>
+                                    <select name="turno[]" id="turno_" class="campo_select" >
                                         <option value="1">Matutino</option>
-                                        <option value="2">Vespertimo</option>
+                                    </select>
+                                </div>
+                            <div class="form-group col-6 col-md-2">
+                                    <label for="horario-inicial">Início</label>
+                                    <input style="margin-left: 20px;" type="time" class="form-control" id="horario-inicial" name="horario-inicial[]" >
+                                </div>
+                            <div class="form-group col-6 col-md-2">
+                                    <label for="horario-final">Término</label>
+                                    <input style="margin-left: 20px;" type="time" class="form-control" id="horario-final" name="horario-final[]" >
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="form-row" id='tobecloned'>
+                                <div class="form-group col-md-3 col-lg-1">
+                                    <label for="turno">Turno</label>
+                                    <select name="turno[]" id="turno_" class="campo_select" >
+                                        <option value="2">Vespertino</option>
+                                    </select>
+                                </div>
+                            <div class="form-group col-6 col-md-2">
+                                    <label for="horario-inicial">Início</label>
+                                    <input style="margin-left: 20px;" type="time" class="form-control" id="horario-inicial" name="horario-inicial[]">
+                                </div>
+                            <div class="form-group col-6 col-md-2">
+                                    <label for="horario-final">Término</label>
+                                    <input style="margin-left: 20px;" type="time" class="form-control" id="horario-final" name="horario-final[]" >
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="form-row" id='tobecloned'>
+                                <div class="form-group col-md-3 col-lg-1">
+                                    <label for="turno">Turno</label>
+                                    <select name="turno[]" id="turno_" class="campo_select">
                                         <option value="3">Noturno</option>
                                     </select>
                                 </div>
                             <div class="form-group col-6 col-md-2">
                                     <label for="horario-inicial">Início</label>
-                                    <input style="margin-left: 20px;" type="time" class="form-control" id="horario-inicial" name="horario-inicial[]" required>
+                                    <input style="margin-left: 20px;" type="time" class="form-control" id="horario-inicial" name="horario-inicial[]">
                                 </div>
                             <div class="form-group col-6 col-md-2">
                                     <label for="horario-final">Término</label>
-                                    <input style="margin-left: 20px;" type="time" class="form-control" id="horario-final" name="horario-final[]" required>
+                                    <input style="margin-left: 20px;" type="time" class="form-control" id="horario-final" name="horario-final[]">
                                 </div>
                             </div>
                         </div>
@@ -118,13 +169,7 @@
                             </div>
                             <div class="form-group col-md-5">
                                 <label for="atividades">Atividades</label>
-                                <input type="text" class="form-control" id="atividades" name="atividades" maxlength="50" required>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group col-md-12">
-                                <label for="descricao">Descrição</label>
-                                <input type="text" class="form-control" id="descricao" name="descricao" maxlength="50" required>
+                                <textarea type="text" class="form-control" id="atividades" name="atividades"  required></textarea>
                             </div>
                         </div>
                     </fieldset>
@@ -141,7 +186,7 @@
                             </div>
                             <div class="form-group col-6 col-md-3">
                                 <label for="seguradora">Seguradora</label>
-                                <input type="text" class="form-control money" id="seguradora" name="seguradora" maxlength="50" required>
+                                <input type="text" class="form-control" id="seguradora" name="seguradora" maxlength="50" required>
                             </div>
                             <div class="form-group col-6 col-md-3">
                                 <label for="emBranco"></label>
@@ -157,7 +202,7 @@
                         </div>
                     </fieldset>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary">Cadastrar</button>
+                        <button type="submit" class="btn btn-primary">Salvar</button>
                     </div>
                 </form>
             </div>

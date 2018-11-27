@@ -23,6 +23,7 @@ if(isset($_POST['req']) && $_POST['req'] == 'preencheCampos') {
                     uf
              from pessoa
              join endereco using(id_endereco)
+              
             where id_pessoa = {$_SESSION['codusuario']} ";
 
     $ret = pg_query($conexao, $sql);

@@ -7,10 +7,41 @@ if (!isset($_SESSION)) {
 require_once 'conectar.php';
 
 $conexao = Conectar();
+if(isset($_POST['req']) && $_POST['req']=='checarEstagio') {
+    $SQL="select finalizado from estagio where id_aluno={$_SESSION['codusuario']}";
+    $query = pg_query($conexao, $SQL);
+        $bFinalisado=1;
+    while($oRes=pg_fetch_row($query)){
+        if($oRes[0]== 0){
+        $bFinalisado = 0;
+        break;
+        }
+    }
+    echo  $bFinalisado ;
+    exit;
 
-$bObrigatorio = isset($_POST['check-obrigatorio']) ? 1 : 2;
+}
+
+if(isset($_POST['req']) && $_POST['req']=='getApolice') {
+    $SQL="select numero, seguradora, valor 
+            from apolice
+            join instituicao using(id_apolice)
+           where id_instituicao = 1";
+    $query = pg_query($conexao, $SQL);
+
+    $aApolice = null;
+
+    while($row = pg_fetch_row($query)){
+        $aApolice['numero'] = $row[0];
+        $aApolice['seg'] = $row[1];
+        $aApolice['val'] = $row[2];
+    }
+    echo json_encode($aApolice);
+    exit;
+}
+$bObrigatorio = ($_POST['tipo'] == 1) ? 1 : 0;
 $sObjetivo = isset($_POST['objetivos']) ? $_POST['objetivos'] : 'null';
-$sDescricao = isset($_POST['descricao']) ? $_POST['descricao'] : 'null';
+$sDescricao = isset($_POST['atividades']) ? $_POST['atividades'] : 'null';
 $sLocal_est = isset($_POST['local']) ? $_POST['local'] : 'null';
 $sSupervisor = isset($_POST['supervisor']) ? $_POST['supervisor'] : 'null';
 $sCargo_supervisor = isset($_POST['cargo-supervisor']) ? $_POST['cargo-supervisor'] : 'null';

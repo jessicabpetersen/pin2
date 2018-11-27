@@ -18,6 +18,16 @@
         <div class="row">
             <div class="col">
                 <h2>Cadastro de Usuário</h2>
+				
+				<?php
+                    if(isset($_GET['erro']) and $_GET['erro'] == 1){
+                        $html = '<div class="alert alert-danger" role="alert">';
+                        $html .= 'Senha de administrador incorreta!';
+                        $html .= '</div>';
+                        echo $html;
+                    }
+                ?>
+				
                 <form method="post" action="/pin2-master/euler-front/model/ModelCadastroUsuario.php">
                     <fieldset>
                         <legend>Pessoal</legend>
@@ -134,6 +144,20 @@
                             <div class="form-group col-md-3">
                                 <label for="conf_senha">Confirmar Senha</label>
                                 <input type="password" class="form-control" id="conf_senha" name="conf_senha" maxlength="10" required>
+                            </div>
+                        </div>
+                    </fieldset>
+					<fieldset>
+                        <div class="form-row">
+                            <div class="form-group form-check">
+                                <input type="checkbox" class="form-check-input" id="perfil-administrador" name="perfil-administrador">
+                                <label for="perfil-administrador">Perfil Administrador</label>
+                            </div>
+                        </div>
+                        <div class="form-row" id="box-senha-administrador" style="display: none;">
+                            <div class="form-group col-md-3">
+                                <label for="senha-administrador">Senha Administrador</label>
+                                <input type="password" class="form-control" id="senha-administrador" name="senha-administrador" maxlength="10">
                             </div>
                         </div>
                     </fieldset>

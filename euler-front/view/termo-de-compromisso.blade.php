@@ -8,10 +8,17 @@
 
 require_once('.\util\LatexTemplate.php');
 
+require_once('.\model\ModelArquivo.php');
+
+
+
 
 
 try {
-    LatexTemplate::download('.\Arquivos/','anexo2.tex', 'termo_de_compromisso.pdf');
+
+    ModelArquivo::grava('.\Arquivos/', 'anexo_ii__termo_de_compromisso.tex','anexo2.tex');
+
+   LatexTemplate::download('.\Arquivos/','anexo2.tex', 'termo_de_compromisso.pdf');
 } catch(Exception $e) {
     echo $e -> getMessage();
 }
